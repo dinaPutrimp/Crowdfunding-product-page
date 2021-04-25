@@ -160,3 +160,4 @@ gotIt.addEventListener('click', () => {
     completedBox.classList.remove('active');
 });
 
+
