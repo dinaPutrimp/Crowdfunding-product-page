@@ -191,10 +191,11 @@ nav .hamburger{
 }
 
 .sub-bar{
-    width: 78%;
+    width: 0%;
     height: 10px;
     background-color: var(--Moderate-cyan);
     border-radius: 10px;
+    transition: width 5s linear;
 }
 
 .about{
