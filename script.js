@@ -23,6 +23,7 @@ const totalAmount = document.querySelector('.total-amount');
 const totalBackers = document.querySelector('.total-backers');
 const completedBox = document.querySelector('.completed-container');
 const gotIt = document.querySelector('.btnOk');
+let subBar = document.querySelector('.sub-bar');
 
 //toggle-nav event 
 hamburger.addEventListener('click', () => {
@@ -102,6 +103,7 @@ formBamboo.addEventListener('submit', () => {
         backers++;
         bamboo--;
         bambooInput.value = '';
+        progresBar();
         closeModalWhenSubmit();
         openCompletedBox();
     } else {
@@ -121,6 +123,7 @@ formBlack.addEventListener('submit', () => {
         backers++;
         black--;
         blackEdLeft.value = '';
+        progresBar();
         closeModalWhenSubmit();
         openCompletedBox();
     } else {
@@ -139,11 +142,16 @@ function addToAmountReward(input) {
         backed += parseInt(input.value);
         backers++;
         input.value = '';
+        progresBar();
         closeModalWhenSubmit();
         openCompletedBox();
     } else {
         modal.style.display = 'block';
     }
+}
+
+function progresBar() {
+    subBar.style.width = `${(backed / 100000) * 100}%`;
 }
 
 function closeModalWhenSubmit() {
@@ -159,5 +167,9 @@ function openCompletedBox() {
 gotIt.addEventListener('click', () => {
     completedBox.classList.remove('active');
 });
+
+progresBar();
+
+
 
 
